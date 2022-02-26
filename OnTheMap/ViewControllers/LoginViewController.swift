@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var userNameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,54 @@ class LoginViewController: UIViewController {
 
     @IBAction func onLoginTap(_ sender: Any) {
         
-        print("Login tapped")
+        let userName = userNameTextField.text
+        let password = passwordTextField.text
+        
+        func validateInputValue(inputValue: String?, errorMessage: String, completion: @escaping (Bool) -> Void) {
+            
+            if((inputValue ?? "").isEmpty) {
+                
+                let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
+                
+                let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                    _ in
+                    completion(false)
+                }
+                
+                alert.addAction(alertAction)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }else{
+                completion(true)
+            }
+        }
+        
+        func initiateLoginRequest() {
+
+            print("login request..")
+        }
+        
+        validateInputValue(inputValue: userName, errorMessage: "Username is required") {
+            result in
+            if(!result) {
+                return
+            }
+            
+            validateInputValue(inputValue: password, errorMessage: "Password is required") {
+                result in
+                if(!result) {
+                    return
+                }
+                
+                initiateLoginRequest()
+            }
+        }
+        
+
+        
+
+        
     }
     
     @IBAction func onSignUpTap(_ sender: Any) {

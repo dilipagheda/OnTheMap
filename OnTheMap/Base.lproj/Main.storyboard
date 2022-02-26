@@ -37,7 +37,7 @@
                                             <constraint firstAttribute="height" constant="50" id="giw-pD-A3n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5M-bQ-CTo">
                                         <rect key="frame" x="0.0" y="150" width="314" height="50"/>
@@ -100,7 +100,9 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="r5M-bQ-CTo" id="G5c-vQ-Mci"/>
+                        <outlet property="passwordTextField" destination="yTZ-RG-ydM" id="is2-r3-3yi"/>
                         <outlet property="signUpButton" destination="TjY-DQ-OdG" id="XBS-bX-JLj"/>
+                        <outlet property="userNameTextField" destination="FKR-A5-cVu" id="MEV-y5-c6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
