@@ -21,7 +21,7 @@
                                 <rect key="frame" x="176" y="54" width="62" height="62"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-2h-FCI">
-                                <rect key="frame" x="50" y="216" width="314" height="200"/>
+                                <rect key="frame" x="50" y="166" width="314" height="200"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKR-A5-cVu" userLabel="userNameTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
@@ -57,7 +57,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="w6x-p6-JgB">
-                                <rect key="frame" x="72" y="432" width="270" height="32"/>
+                                <rect key="frame" x="72" y="382" width="270" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWf-C4-47m">
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="32"/>
@@ -88,7 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yTL-2h-FCI" firstAttribute="top" secondItem="8J6-2h-woV" secondAttribute="bottom" constant="100" id="0Hi-yv-SLG"/>
+                            <constraint firstItem="yTL-2h-FCI" firstAttribute="top" secondItem="8J6-2h-woV" secondAttribute="bottom" constant="50" id="0Hi-yv-SLG"/>
                             <constraint firstItem="yTL-2h-FCI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2t4-fW-e55"/>
                             <constraint firstItem="8J6-2h-woV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AIs-sV-wLM"/>
                             <constraint firstItem="w6x-p6-JgB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jvf-AI-wUx"/>
