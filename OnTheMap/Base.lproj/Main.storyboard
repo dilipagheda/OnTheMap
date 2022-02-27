@@ -29,7 +29,7 @@
                                             <constraint firstAttribute="height" constant="50" id="iik-xa-oHD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTZ-RG-ydM" userLabel="passwordTextField">
                                         <rect key="frame" x="0.0" y="75" width="314" height="50"/>
@@ -84,6 +84,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UPY-hr-FdE">
+                                <rect key="frame" x="197" y="452" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,11 +97,14 @@
                             <constraint firstItem="w6x-p6-JgB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jvf-AI-wUx"/>
                             <constraint firstItem="8J6-2h-woV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="L6n-hh-WjK"/>
                             <constraint firstItem="yTL-2h-FCI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="WV0-XT-tw5"/>
+                            <constraint firstItem="UPY-hr-FdE" firstAttribute="top" secondItem="w6x-p6-JgB" secondAttribute="bottom" constant="38" id="dH1-lg-hjw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTL-2h-FCI" secondAttribute="trailing" constant="50" id="g1E-Kd-2Ni"/>
+                            <constraint firstItem="UPY-hr-FdE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sVp-xl-FhT"/>
                             <constraint firstItem="w6x-p6-JgB" firstAttribute="top" secondItem="yTL-2h-FCI" secondAttribute="bottom" constant="16" id="ytc-Ov-z2w"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="UPY-hr-FdE" id="T3B-OI-wSo"/>
                         <outlet property="loginButton" destination="r5M-bQ-CTo" id="G5c-vQ-Mci"/>
                         <outlet property="passwordTextField" destination="yTZ-RG-ydM" id="is2-r3-3yi"/>
                         <outlet property="signUpButton" destination="TjY-DQ-OdG" id="XBS-bX-JLj"/>

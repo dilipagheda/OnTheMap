@@ -17,14 +17,27 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let blueColor = UIColor(red: 74/255, green: 163/255, blue: 221/255, alpha: 1.0)
         self.loginButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        self.loginButton.backgroundColor = blueColor
+        self.updateLoginButtonUI(isEnabled: true)
         
-        self.signUpButton.setTitleColor(blueColor, for: UIControl.State.normal)
+        self.signUpButton.setTitleColor(Colors.blue, for: UIControl.State.normal)
+    }
+    
+    private func updateLoginButtonUI(isEnabled: Bool) {
+        
+        self.loginButton.isEnabled = isEnabled
+        
+        if(isEnabled) {
+            self.loginButton.backgroundColor = Colors.blue
+            
+        }else {
+            self.loginButton.backgroundColor = UIColor.lightGray
+        }
     }
 
 
@@ -54,15 +67,31 @@ class LoginViewController: UIViewController {
         }
         
         func initiateLoginRequest() {
-
+            
+            func updateUI(isLoginInProgress: Bool) {
+                
+                if(isLoginInProgress) {
+                    self.updateLoginButtonUI(isEnabled: false)
+                    activityView.startAnimating()
+                }else{
+                    self.updateLoginButtonUI(isEnabled: true)
+                    activityView.stopAnimating()                }
+            }
+            
+            updateUI(isLoginInProgress: true)
+            
             NetworkService.login(userName: userName!, password: password!) {
                 isSuccessful, errorMessage in
                 if(isSuccessful){
+                    updateUI(isLoginInProgress: false)
                     print("successful login")
                 }else{
                     let alert = UIAlertController(title: "Login Error", message: errorMessage ?? "Something went wrong!", preferredStyle: UIAlertController.Style.alert)
                     
-                    let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                    let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                        _ in
+                        updateUI(isLoginInProgress: false)
+                    }
                     alert.addAction(alertAction)
                     
                     self.present(alert, animated: true, completion: nil)
