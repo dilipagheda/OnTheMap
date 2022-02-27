@@ -21,6 +21,7 @@
 		DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAE127CB411500C6F51E /* MapViewController.swift */; };
 		DA2FAAE427CB412C00C6F51E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAE327CB412C00C6F51E /* ListViewController.swift */; };
 		DA5BF83327CB669700812970 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83227CB669700812970 /* TabBarController.swift */; };
+		DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83427CB711000812970 /* StudentLocationResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DA2FAAE127CB411500C6F51E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DA2FAAE327CB412C00C6F51E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DA5BF83227CB669700812970 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DA5BF83427CB711000812970 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DA2FAADB27CAE8CD00C6F51E /* LoginResponse.swift */,
+				DA5BF83427CB711000812970 /* StudentLocationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,
 				DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */,
+				DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */,
 				DA2FAABF27C994CE00C6F51E /* SceneDelegate.swift in Sources */,
 				DA2FAADE27CAF3C600C6F51E /* LoginRequest.swift in Sources */,
 				DA2FAAE427CB412C00C6F51E /* ListViewController.swift in Sources */,

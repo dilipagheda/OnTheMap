@@ -61,14 +61,11 @@ class NetworkService {
 
                 return
             }
-            
-            let range = 5..<data.count
-            let newData = data.subdata(in: range)
-            
+           
             let decoder = JSONDecoder()
             
             do {
-                let responseObject = try decoder.decode(Response.self, from: newData)
+                let responseObject = try decoder.decode(Response.self, from: data)
 
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
@@ -115,5 +112,23 @@ class NetworkService {
                 }
             }
         }
+    }
+    
+    class func getStudentLocations(completion: @escaping ([Result]?, String?) -> Void) {
+        
+        self.getRequest(url: Endpoints.studentLocation.url, responseType: StudentLocationResponse.self) {
+            
+            (studentLocationResponse, error) in
+            guard let studentLocationResponse = studentLocationResponse else {
+                completion(nil, error?.localizedDescription)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion(studentLocationResponse.results, nil)
+            }
+
+        }
+        
     }
 }

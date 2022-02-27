@@ -8,35 +8,49 @@
 import Foundation
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate {
+class ListViewController: UITableViewController {
+    
+    private var results: [Result] = []
+    
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
+       
+        NetworkService.getStudentLocations(){
+            (results, error) in
+            guard let results = results else {
+                self.results = []
+                //TODO: show error in the alert
+                return
+            }
+            
+            self.results = results
+            self.tableView.reloadData()
+            
+        }
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        return results.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 10
-    }
     
-    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "onTheMapTableCell", for: indexPath)
             
-        //let meme = memes[indexPath.row]
+        let result = results[indexPath.row]
         
-        //cell.memeImageView.image = meme.memedImage
-        //cell.memeLabel.text = "\(meme.topText)...\(meme.bottomText)"
+        cell.textLabel!.text = "\(result.firstName) \(result.lastName)"
+        cell.detailTextLabel!.text = result.mediaURL
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
