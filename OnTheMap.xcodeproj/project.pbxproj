@@ -20,6 +20,7 @@
 		DA2FAAE027CB3D9800C6F51E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAADF27CB3D9800C6F51E /* Colors.swift */; };
 		DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAE127CB411500C6F51E /* MapViewController.swift */; };
 		DA2FAAE427CB412C00C6F51E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAE327CB412C00C6F51E /* ListViewController.swift */; };
+		DA5BF83327CB669700812970 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83227CB669700812970 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DA2FAADF27CB3D9800C6F51E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DA2FAAE127CB411500C6F51E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DA2FAAE327CB412C00C6F51E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DA5BF83227CB669700812970 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				DA2FAAC027C994CE00C6F51E /* LoginViewController.swift */,
 				DA2FAAE127CB411500C6F51E /* MapViewController.swift */,
 				DA2FAAE327CB412C00C6F51E /* ListViewController.swift */,
+				DA5BF83227CB669700812970 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				DA2FAAC127C994CE00C6F51E /* LoginViewController.swift in Sources */,
 				DA2FAAE027CB3D9800C6F51E /* Colors.swift in Sources */,
+				DA5BF83327CB669700812970 /* TabBarController.swift in Sources */,
 				DA2FAABD27C994CE00C6F51E /* AppDelegate.swift in Sources */,
 				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,

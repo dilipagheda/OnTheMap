@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OI7-07-C2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r0V-Vj-ndN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -113,7 +113,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526" y="-483"/>
+            <point key="canvasLocation" x="-1780" y="-501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sjR-KO-afs">
+            <objects>
+                <navigationController id="r0V-Vj-ndN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QTt-cr-V0T">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OI7-07-C2z" kind="relationship" relationship="rootViewController" id="A42-W1-CwJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8o-B8-XGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-965" y="-502"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="iDa-8i-UHH">
@@ -123,34 +139,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-fR-M2B">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="On the Map" id="Fdv-V4-eAZ">
-                                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" style="done" id="0it-Yh-svS"/>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="icon_addpin" id="M3r-ee-Egv" userLabel="addButton"/>
-                                            <barButtonItem image="icon_refresh" id="kp0-Ic-5UX" userLabel="refreshButton"/>
-                                        </rightBarButtonItems>
-                                    </navigationItem>
-                                </items>
-                                <navigationBarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </navigationBarAppearance>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-ej-ul8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R2y-ej-ul8">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ZT2-vo-JTg" detailTextLabel="OPm-nE-bTr" imageView="jFI-et-xkl" style="IBUITableViewCellStyleSubtitle" id="l6Y-GH-yWj">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l6Y-GH-yWj" id="IwV-ce-juu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZT2-vo-JTg">
-                                                    <rect key="frame" x="59" y="4" width="42.5" height="20.5"/>
+                                                    <rect key="frame" x="59" y="10" width="42.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
@@ -163,7 +164,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OPm-nE-bTr">
-                                                    <rect key="frame" x="59" y="24.5" width="34.5" height="16"/>
+                                                    <rect key="frame" x="59" y="31.5" width="34.5" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Detail">
@@ -175,7 +176,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_pin" id="jFI-et-xkl">
-                                                    <rect key="frame" x="20" y="9.5" width="24" height="24"/>
+                                                    <rect key="frame" x="20" y="17" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -187,13 +188,9 @@
                         <viewLayoutGuide key="safeArea" id="aTx-Ot-XrJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2yB-fR-M2B" firstAttribute="trailing" secondItem="aTx-Ot-XrJ" secondAttribute="trailing" id="8xj-Fx-FfE"/>
-                            <constraint firstItem="2yB-fR-M2B" firstAttribute="top" secondItem="aTx-Ot-XrJ" secondAttribute="top" id="D0a-MJ-MO3"/>
                             <constraint firstItem="aTx-Ot-XrJ" firstAttribute="trailing" secondItem="R2y-ej-ul8" secondAttribute="trailing" id="NzL-5f-j0c"/>
                             <constraint firstItem="aTx-Ot-XrJ" firstAttribute="bottom" secondItem="R2y-ej-ul8" secondAttribute="bottom" id="Oxc-uZ-O3M"/>
                             <constraint firstItem="R2y-ej-ul8" firstAttribute="leading" secondItem="aTx-Ot-XrJ" secondAttribute="leading" id="b8J-JP-jxn"/>
-                            <constraint firstItem="2yB-fR-M2B" firstAttribute="leading" secondItem="aTx-Ot-XrJ" secondAttribute="leading" id="dCJ-EH-Mho"/>
-                            <constraint firstItem="R2y-ej-ul8" firstAttribute="top" secondItem="2yB-fR-M2B" secondAttribute="bottom" id="fCo-KQ-hiw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" id="gyz-Kc-VLN"/>
@@ -210,23 +207,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-ul-87w">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="On the Map" id="mau-xe-EQc">
-                                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" style="done" id="u5G-JX-Svy"/>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="icon_addpin" id="PFL-sY-MF7" userLabel="addButton"/>
-                                            <barButtonItem image="icon_refresh" id="JOJ-oX-fdC" userLabel="refreshButton"/>
-                                        </rightBarButtonItems>
-                                    </navigationItem>
-                                </items>
-                                <navigationBarAppearance key="standardAppearance">
-                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </navigationBarAppearance>
-                            </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NFs-le-JF9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NFs-le-JF9">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QRh-bz-fpK"/>
@@ -234,10 +216,6 @@
                         <constraints>
                             <constraint firstItem="QRh-bz-fpK" firstAttribute="bottom" secondItem="NFs-le-JF9" secondAttribute="bottom" id="4WF-9o-RTf"/>
                             <constraint firstItem="NFs-le-JF9" firstAttribute="leading" secondItem="QRh-bz-fpK" secondAttribute="leading" id="7St-YU-2gs"/>
-                            <constraint firstItem="mkd-ul-87w" firstAttribute="trailing" secondItem="QRh-bz-fpK" secondAttribute="trailing" id="PFm-Yf-mYU"/>
-                            <constraint firstItem="mkd-ul-87w" firstAttribute="leading" secondItem="QRh-bz-fpK" secondAttribute="leading" id="TC2-dy-rke"/>
-                            <constraint firstItem="mkd-ul-87w" firstAttribute="top" secondItem="QRh-bz-fpK" secondAttribute="top" id="VoN-ce-tjd"/>
-                            <constraint firstItem="NFs-le-JF9" firstAttribute="top" secondItem="mkd-ul-87w" secondAttribute="bottom" id="VsB-uj-6Hp"/>
                             <constraint firstItem="QRh-bz-fpK" firstAttribute="trailing" secondItem="NFs-le-JF9" secondAttribute="trailing" id="xx8-vz-1tX"/>
                         </constraints>
                     </view>
@@ -247,10 +225,27 @@
             </objects>
             <point key="canvasLocation" x="1294" y="-532"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--On the Map-->
         <scene sceneID="XhO-zy-lee">
             <objects>
-                <tabBarController id="OI7-07-C2z" sceneMemberID="viewController">
+                <tabBarController id="OI7-07-C2z" customClass="TabBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="On the Map" largeTitleDisplayMode="always" id="VtK-8p-QyJ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="eKX-Ws-2Me">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4H6-an-W4D">
+                                <rect key="frame" x="20" y="5" width="75" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="add" id="Wb8-Lc-i5n"/>
+                            <barButtonItem style="plain" systemItem="refresh" id="MVP-Hc-Tmy"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IRf-Aw-rqr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -263,15 +258,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ6-OO-DOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-483"/>
+            <point key="canvasLocation" x="-74" y="-502"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
-        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
