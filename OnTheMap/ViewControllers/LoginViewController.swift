@@ -55,7 +55,19 @@ class LoginViewController: UIViewController {
         
         func initiateLoginRequest() {
 
-            print("login request..")
+            NetworkService.login(userName: userName!, password: password!) {
+                isSuccessful, errorMessage in
+                if(isSuccessful){
+                    print("successful login")
+                }else{
+                    let alert = UIAlertController(title: "Login Error", message: errorMessage ?? "Something went wrong!", preferredStyle: UIAlertController.Style.alert)
+                    
+                    let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+                    alert.addAction(alertAction)
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
         
         validateInputValue(inputValue: userName, errorMessage: "Username is required") {

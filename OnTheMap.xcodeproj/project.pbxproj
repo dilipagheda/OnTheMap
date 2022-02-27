@@ -15,6 +15,8 @@
 		DA2FAAC927C994D000C6F51E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2FAAC727C994D000C6F51E /* LaunchScreen.storyboard */; };
 		DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAD627CAD16400C6F51E /* NetworkService.swift */; };
 		DA2FAADA27CAD1BC00C6F51E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAD927CAD1BC00C6F51E /* Endpoints.swift */; };
+		DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAADB27CAE8CD00C6F51E /* LoginResponse.swift */; };
+		DA2FAADE27CAF3C600C6F51E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAADD27CAF3C600C6F51E /* LoginRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DA2FAACA27C994D000C6F51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2FAAD627CAD16400C6F51E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DA2FAAD927CAD1BC00C6F51E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		DA2FAADB27CAE8CD00C6F51E /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		DA2FAADD27CAF3C600C6F51E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		DA2FAAD427CAD13600C6F51E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				DA2FAADD27CAF3C600C6F51E /* LoginRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 		DA2FAAD527CAD13C00C6F51E /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				DA2FAADB27CAE8CD00C6F51E /* LoginResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -202,8 +208,10 @@
 			files = (
 				DA2FAAC127C994CE00C6F51E /* LoginViewController.swift in Sources */,
 				DA2FAABD27C994CE00C6F51E /* AppDelegate.swift in Sources */,
+				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */,
 				DA2FAABF27C994CE00C6F51E /* SceneDelegate.swift in Sources */,
+				DA2FAADE27CAF3C600C6F51E /* LoginRequest.swift in Sources */,
 				DA2FAADA27CAD1BC00C6F51E /* Endpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
