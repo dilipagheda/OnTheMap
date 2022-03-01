@@ -142,14 +142,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="onTheMapTableCell" textLabel="Cqu-WJ-fwU" detailTextLabel="wW1-aA-FlH" imageView="C9f-u8-V38" style="IBUITableViewCellStyleSubtitle" id="ydc-Ol-pZR">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="57.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydc-Ol-pZR" id="wa5-7G-N5o">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cqu-WJ-fwU">
-                                            <rect key="frame" x="59" y="4" width="36.5" height="20.5"/>
+                                            <rect key="frame" x="59" y="11" width="36.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Title">
@@ -162,7 +162,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wW1-aA-FlH">
-                                            <rect key="frame" x="59" y="24.5" width="48.5" height="16"/>
+                                            <rect key="frame" x="59" y="31.5" width="48.5" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Subtitle">
@@ -174,7 +174,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_pin" id="C9f-u8-V38">
-                                            <rect key="frame" x="20" y="9.5" width="24" height="24"/>
+                                            <rect key="frame" x="20" y="16.5" width="24" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </imageView>
@@ -247,6 +247,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" id="7Q5-kO-fWe"/>
+                    <connections>
+                        <outlet property="mapView" destination="HPV-fG-oZL" id="UPX-IL-WFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcF-tv-SDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
