@@ -52,6 +52,20 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let result = self.results[indexPath.row]
+        
+        let url = URL(string: result.mediaURL)
+        
+        if let url = url {
+            let app = UIApplication.shared
+            app.open(url) {
+                (isSuccessful) in
+                if(!isSuccessful) {
+                    Alerts.setParentView(parentView: self)
+                          .showError(errorMessage: "Invalid URL")
+                }
+            }
+        }
     }
     
 }

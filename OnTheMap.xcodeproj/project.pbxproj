@@ -22,6 +22,7 @@
 		DA2FAAE427CB412C00C6F51E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FAAE327CB412C00C6F51E /* ListViewController.swift */; };
 		DA5BF83327CB669700812970 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83227CB669700812970 /* TabBarController.swift */; };
 		DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83427CB711000812970 /* StudentLocationResponse.swift */; };
+		DA5BF83727CED6BE00812970 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83627CED6BE00812970 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DA2FAAE327CB412C00C6F51E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DA5BF83227CB669700812970 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DA5BF83427CB711000812970 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
+		DA5BF83627CED6BE00812970 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				DA2FAAD927CAD1BC00C6F51E /* Endpoints.swift */,
 				DA2FAADF27CB3D9800C6F51E /* Colors.swift */,
+				DA5BF83627CED6BE00812970 /* Alerts.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,
 				DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */,
 				DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */,
+				DA5BF83727CED6BE00812970 /* Alerts.swift in Sources */,
 				DA2FAABF27C994CE00C6F51E /* SceneDelegate.swift in Sources */,
 				DA2FAADE27CAF3C600C6F51E /* LoginRequest.swift in Sources */,
 				DA2FAAE427CB412C00C6F51E /* ListViewController.swift in Sources */,
