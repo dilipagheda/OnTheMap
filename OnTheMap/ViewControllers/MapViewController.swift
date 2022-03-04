@@ -15,8 +15,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
        
+        mapView.delegate = self
+        
+        self.refresh()
+    }
+    
+    public func refresh() {
+        
+        print("refresh called")
+        
         NetworkService.getStudentLocations(){
             (results, error) in
             guard let results = results else {
@@ -28,10 +38,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             self.results = results
             self.configureMapView()
         }
-        
-        mapView.delegate = self
-      
-
     }
     
     private func configureMapView() {

@@ -16,7 +16,17 @@ class ListViewController: UITableViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-       
+        
+        self.refresh()
+    }
+    
+    public func refresh() {
+        
+        print("refresh on list view")
+        
+        self.results = []
+        self.tableView.reloadData()
+        
         NetworkService.getStudentLocations(){
             (results, error) in
             guard let results = results else {
@@ -29,7 +39,6 @@ class ListViewController: UITableViewController {
             self.tableView.reloadData()
             
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
