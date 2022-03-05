@@ -110,9 +110,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
-            if let toOpen = view.annotation?.subtitle! {
-                app.open(URL(string: toOpen)!)
+            
+            guard let annotation = view.annotation else {
+                return
             }
+            
+            let subtitle: String = annotation.subtitle! ?? ""
+            let url = URL(string: subtitle)
+            
+            guard let url = url else {
+                
+                Alerts.setParentView(parentView: self).showError(errorMessage: "Invalid URL!")
+                return
+            }
+            
+            app.open(url)
         }
     }
 }
