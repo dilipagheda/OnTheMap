@@ -11,14 +11,17 @@ import Foundation
 enum Endpoints {
     
     case authenticate
-    case studentLocation
+    case studentLocation(isGetRequest: Bool)
     
     var url: URL {
         
         switch(self) {
         case .authenticate:
             return URL(string: "https://onthemap-api.udacity.com/v1/session")!
-        case .studentLocation:
+        case let .studentLocation(isGetRequest):
+            if(isGetRequest) {
+                return URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt")!
+            }
             return URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!
         }
     }

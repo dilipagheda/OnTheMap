@@ -14,6 +14,13 @@ class InvalidLoginCredentialsError: LocalizedError {
     }
 }
 
+class GenericError: LocalizedError {
+    var errorDescription: String? {
+        return "Sorry! Something went wrong!"
+    }
+}
+
+
 class NetworkService {
     
     private class func postRequest<Request: Codable, Response: Codable>(url: URL, request: Request ,responseType: Response.Type, completion: @escaping (Response?, Error?) -> Void) {
@@ -31,7 +38,7 @@ class NetworkService {
             }
             
             let range = 5..<data.count
-            let newData = data.subdata(in: range)
+            let newData = url.absoluteString == Endpoints.authenticate.url.absoluteString ? data.subdata(in: range) : data
             
             let decoder = JSONDecoder()
             
@@ -40,7 +47,9 @@ class NetworkService {
 
                 completion(responseObject, nil)
             } catch {
-                completion(nil, InvalidLoginCredentialsError())
+                let error: LocalizedError = url.absoluteString == Endpoints.authenticate.url.absoluteString ? InvalidLoginCredentialsError() : GenericError()
+                
+                completion(nil, error)
             }
             
         }
@@ -116,7 +125,7 @@ class NetworkService {
     
     class func getStudentLocations(completion: @escaping ([Result]?, String?) -> Void) {
         
-        self.getRequest(url: Endpoints.studentLocation.url, responseType: StudentLocationResponse.self) {
+        self.getRequest(url: Endpoints.studentLocation(isGetRequest: true).url, responseType: StudentLocationResponse.self) {
             
             (studentLocationResponse, error) in
             guard let studentLocationResponse = studentLocationResponse else {
@@ -128,6 +137,36 @@ class NetworkService {
                 completion(studentLocationResponse.results, nil)
             }
 
+        }
+        
+    }
+    
+    class func postStudentLocation(studentLocationRequest: StudentLocationRequest, completion: @escaping (Bool, String?) -> Void) {
+        
+        self.postRequest(url: Endpoints.studentLocation(isGetRequest: false).url, request: studentLocationRequest, responseType: StudentLocationPostResponse.self) {
+            (studentLocationPostResponse, error) in
+            guard let studentLocationPostResponse = studentLocationPostResponse else {
+                var message: String? = nil
+                if let error = error {
+                    message = error.localizedDescription
+                }
+                DispatchQueue.main.async {
+                    completion(false, message)
+                }
+
+                return
+            }
+            
+            if(!studentLocationPostResponse.objectId.isEmpty) {
+                
+                DispatchQueue.main.async {
+                    completion(true, nil)
+                }
+            }else{
+                DispatchQueue.main.async {
+                    completion(false, "Can not add a location! No objectId was returned.")
+                }
+            }
         }
         
     }

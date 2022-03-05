@@ -134,7 +134,6 @@
         <!--List View Controller-->
         <scene sceneID="sKe-hX-jLE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yXx-u4-Gqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="cYm-25-K0D" customClass="ListViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ngq-ag-KRt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -189,6 +188,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" id="5ZC-1d-bKc"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXx-u4-Gqs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742" y="226"/>
         </scene>
@@ -208,6 +208,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="CANCEL">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onCancelTap:" destination="IUG-kT-nuW" eventType="touchUpInside" id="I19-eX-xqT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-36-5Ln">
                                         <rect key="frame" x="156.5" y="15.5" width="101.5" height="19.5"/>
@@ -250,28 +253,61 @@
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="FIND LOCATION"/>
+                                        <connections>
+                                            <action selector="onFindLocationTap:" destination="IUG-kT-nuW" eventType="touchUpInside" id="fMl-2R-M6R"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="QcJ-xI-89s"/>
                                 </constraints>
                             </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-hs-IGy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu2-yB-OlW" userLabel="finishButton">
+                                <rect key="frame" x="20" y="772" width="374" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="1fS-4e-DVt"/>
+                                    <constraint firstAttribute="height" constant="60" id="Pvk-Xl-m4X"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="FINISH"/>
+                                <connections>
+                                    <action selector="onFinishButtonTap:" destination="IUG-kT-nuW" eventType="touchUpInside" id="uBP-go-eRQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zUu-4A-jmE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9dh-hs-IGy" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" id="1LJ-vV-b5h"/>
                             <constraint firstItem="oEr-Jn-8BQ" firstAttribute="centerX" secondItem="0hg-LR-vBa" secondAttribute="centerX" id="59X-kV-jqP"/>
                             <constraint firstItem="IzB-2P-Cgx" firstAttribute="top" secondItem="zUu-4A-jmE" secondAttribute="top" id="5ID-eG-Ya8"/>
                             <constraint firstItem="IzB-2P-Cgx" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" id="Dsg-k4-ibX"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="iu2-yB-OlW" secondAttribute="trailing" constant="20" id="F0u-Sp-yB0"/>
+                            <constraint firstItem="iu2-yB-OlW" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" constant="20" id="MGb-r3-8v0"/>
                             <constraint firstItem="B9d-Ke-GeZ" firstAttribute="top" secondItem="oEr-Jn-8BQ" secondAttribute="bottom" constant="20" id="QSE-k2-IRS"/>
                             <constraint firstItem="B9d-Ke-GeZ" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" constant="20" id="Tql-LN-7f4"/>
+                            <constraint firstItem="9dh-hs-IGy" firstAttribute="top" secondItem="zUu-4A-jmE" secondAttribute="top" id="Ygq-n5-wN5"/>
                             <constraint firstItem="oEr-Jn-8BQ" firstAttribute="top" secondItem="IzB-2P-Cgx" secondAttribute="bottom" constant="10" id="ZrY-Yo-Pj4"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="9dh-hs-IGy" secondAttribute="trailing" id="fPC-Yk-nGM"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="bottom" secondItem="9dh-hs-IGy" secondAttribute="bottom" id="j2h-Dz-cpj"/>
                             <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="B9d-Ke-GeZ" secondAttribute="trailing" constant="20" id="kjH-cs-YUS"/>
                             <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="IzB-2P-Cgx" secondAttribute="trailing" id="oza-xi-gEI"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="bottom" secondItem="iu2-yB-OlW" secondAttribute="bottom" constant="30" id="s71-V2-wSm"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="findLocationButton" destination="m15-ii-nku" id="rE7-xk-gj5"/>
+                        <outlet property="finishButton" destination="iu2-yB-OlW" id="gXi-NM-rad"/>
+                        <outlet property="locationTextField" destination="M0q-vz-8jH" id="GVg-gI-9y2"/>
+                        <outlet property="mapView" destination="9dh-hs-IGy" id="Lws-eo-pwP"/>
+                        <outlet property="urlTextField" destination="8b1-AU-QGk" id="rmd-1K-dIZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khl-rs-htN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
