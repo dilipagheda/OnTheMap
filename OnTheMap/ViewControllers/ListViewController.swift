@@ -10,7 +10,7 @@ import UIKit
 
 class ListViewController: UITableViewController {
     
-    private var results: [Result] = []
+    private var results: [StudentInformation] = []
     
     
     override func viewDidLoad() {

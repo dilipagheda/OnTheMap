@@ -10,7 +10,7 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
-    private var results: [Result] = []
+    private var results: [StudentInformation] = []
 
     @IBOutlet var mapView: MKMapView!
     

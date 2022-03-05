@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Result : Codable {
+struct StudentInformation : Codable {
     
     let firstName: String
     let lastName: String
@@ -23,5 +23,5 @@ struct Result : Codable {
 
 struct StudentLocationResponse : Codable {
     
-    let results: [Result]
+    let results: [StudentInformation]
 }

@@ -123,7 +123,7 @@ class NetworkService {
         }
     }
     
-    class func getStudentLocations(completion: @escaping ([Result]?, String?) -> Void) {
+    class func getStudentLocations(completion: @escaping ([StudentInformation]?, String?) -> Void) {
         
         self.getRequest(url: Endpoints.studentLocation(isGetRequest: true).url, responseType: StudentLocationResponse.self) {
             
