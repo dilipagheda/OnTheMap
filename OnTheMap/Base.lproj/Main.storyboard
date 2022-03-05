@@ -192,6 +192,91 @@
             </objects>
             <point key="canvasLocation" x="742" y="226"/>
         </scene>
+        <!--Add Location-->
+        <scene sceneID="QGw-Ef-P3J">
+            <objects>
+                <viewController title="Add Location" modalPresentationStyle="fullScreen" id="IUG-kT-nuW" customClass="AddLocationViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hg-LR-vBa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzB-2P-Cgx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLp-2b-t1W">
+                                        <rect key="frame" x="0.0" y="9" width="82.5" height="32"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CANCEL">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvz-36-5Ln">
+                                        <rect key="frame" x="156.5" y="15.5" width="101.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Kvz-36-5Ln" firstAttribute="centerX" secondItem="IzB-2P-Cgx" secondAttribute="centerX" id="BEU-cb-Zq0"/>
+                                    <constraint firstAttribute="height" constant="50" id="L2o-22-PP0"/>
+                                    <constraint firstItem="Kvz-36-5Ln" firstAttribute="centerY" secondItem="IzB-2P-Cgx" secondAttribute="centerY" id="Odp-b9-Odt"/>
+                                    <constraint firstItem="gLp-2b-t1W" firstAttribute="leading" secondItem="IzB-2P-Cgx" secondAttribute="leading" id="SyM-Lc-2Th"/>
+                                    <constraint firstItem="gLp-2b-t1W" firstAttribute="centerY" secondItem="IzB-2P-Cgx" secondAttribute="centerY" id="ea1-Ix-0SG"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="oEr-Jn-8BQ">
+                                <rect key="frame" x="157" y="104" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jd4-m4-6Xe"/>
+                                    <constraint firstAttribute="height" constant="100" id="L5I-2v-h1m"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B9d-Ke-GeZ">
+                                <rect key="frame" x="20" y="224" width="374" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0q-vz-8jH" userLabel="locationTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-AU-QGk" userLabel="urlTextField">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m15-ii-nku">
+                                        <rect key="frame" x="0.0" y="140" width="374" height="60"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="FIND LOCATION"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QcJ-xI-89s"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zUu-4A-jmE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oEr-Jn-8BQ" firstAttribute="centerX" secondItem="0hg-LR-vBa" secondAttribute="centerX" id="59X-kV-jqP"/>
+                            <constraint firstItem="IzB-2P-Cgx" firstAttribute="top" secondItem="zUu-4A-jmE" secondAttribute="top" id="5ID-eG-Ya8"/>
+                            <constraint firstItem="IzB-2P-Cgx" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" id="Dsg-k4-ibX"/>
+                            <constraint firstItem="B9d-Ke-GeZ" firstAttribute="top" secondItem="oEr-Jn-8BQ" secondAttribute="bottom" constant="20" id="QSE-k2-IRS"/>
+                            <constraint firstItem="B9d-Ke-GeZ" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" constant="20" id="Tql-LN-7f4"/>
+                            <constraint firstItem="oEr-Jn-8BQ" firstAttribute="top" secondItem="IzB-2P-Cgx" secondAttribute="bottom" constant="10" id="ZrY-Yo-Pj4"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="B9d-Ke-GeZ" secondAttribute="trailing" constant="20" id="kjH-cs-YUS"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="IzB-2P-Cgx" secondAttribute="trailing" id="oza-xi-gEI"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khl-rs-htN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428.98550724637687" y="-1282.3660714285713"/>
+        </scene>
         <!--On the Map-->
         <scene sceneID="XhO-zy-lee">
             <objects>
@@ -208,7 +293,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="plain" systemItem="add" id="Wb8-Lc-i5n">
                                 <connections>
-                                    <action selector="onAddTap:" destination="OI7-07-C2z" id="k3j-ck-6fn"/>
+                                    <segue destination="IUG-kT-nuW" kind="presentation" id="wz3-hU-ZgT"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" systemItem="refresh" id="MVP-Hc-Tmy">
@@ -270,6 +355,7 @@
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
+        <image name="icon_world" width="52" height="67"/>
         <image name="logo-u" width="62" height="62"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

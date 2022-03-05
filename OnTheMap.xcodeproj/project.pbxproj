@@ -23,6 +23,7 @@
 		DA5BF83327CB669700812970 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83227CB669700812970 /* TabBarController.swift */; };
 		DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83427CB711000812970 /* StudentLocationResponse.swift */; };
 		DA5BF83727CED6BE00812970 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83627CED6BE00812970 /* Alerts.swift */; };
+		DA5BF83927D2DB5B00812970 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83827D2DB5B00812970 /* AddLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DA5BF83227CB669700812970 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DA5BF83427CB711000812970 /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
 		DA5BF83627CED6BE00812970 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		DA5BF83827D2DB5B00812970 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				DA2FAAE127CB411500C6F51E /* MapViewController.swift */,
 				DA2FAAE327CB412C00C6F51E /* ListViewController.swift */,
 				DA5BF83227CB669700812970 /* TabBarController.swift */,
+				DA5BF83827D2DB5B00812970 /* AddLocationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				DA2FAABD27C994CE00C6F51E /* AppDelegate.swift in Sources */,
 				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,
+				DA5BF83927D2DB5B00812970 /* AddLocationViewController.swift in Sources */,
 				DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */,
 				DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */,
 				DA5BF83727CED6BE00812970 /* Alerts.swift in Sources */,

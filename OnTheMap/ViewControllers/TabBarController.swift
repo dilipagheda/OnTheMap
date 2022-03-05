@@ -13,13 +13,6 @@ class TabBarController: UITabBarController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
-   
-    @IBAction func onAddTap(_ sender: Any) {
-        
-        print("on add tap")
-
-    }
-    
     
     @IBAction func onRefreshTap(_ sender: Any) {
         
