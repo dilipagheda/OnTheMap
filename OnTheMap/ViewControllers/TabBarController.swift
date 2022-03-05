@@ -28,10 +28,9 @@ class TabBarController: UITabBarController {
                 Alerts.setParentView(parentView: self)
                     .showError(errorMessage: errorMessage)
             }
-            
-            self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
-            
-            
+
+            self.navigationController?.popToRootViewController(animated: true)
+
         }
     }
     

@@ -20,12 +20,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
         self.loginButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.updateLoginButtonUI(isEnabled: true)
         
         self.signUpButton.setTitleColor(Colors.blue, for: UIControl.State.normal)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+        userNameTextField.becomeFirstResponder()
     }
     
     private func updateLoginButtonUI(isEnabled: Bool) {
@@ -39,7 +47,6 @@ class LoginViewController: UIViewController {
             self.loginButton.backgroundColor = UIColor.lightGray
         }
     }
-
 
     @IBAction func onLoginTap(_ sender: Any) {
         
