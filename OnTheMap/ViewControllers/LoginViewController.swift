@@ -83,8 +83,11 @@ class LoginViewController: UIViewController {
             NetworkService.login(userName: userName!, password: password!) {
                 isSuccessful, errorMessage in
                 if(isSuccessful){
+                    
                     updateUI(isLoginInProgress: false)
-                    print("successful login")
+                    
+                    self.performSegue(withIdentifier: "showLandingView", sender: nil)
+
                 }else{
                     let alert = UIAlertController(title: "Login Error", message: errorMessage ?? "Something went wrong!", preferredStyle: UIAlertController.Style.alert)
                     
@@ -114,16 +117,13 @@ class LoginViewController: UIViewController {
                 initiateLoginRequest()
             }
         }
-        
-
-        
-
-        
     }
     
     @IBAction func onSignUpTap(_ sender: Any) {
         
-        print("Sign up tapped")
+        let url = URL(string: "https://auth.udacity.com/sign-up?next=https://classroom.udacity.com")!
+        let app = UIApplication.shared
+        app.open(url)
     }
     
 }

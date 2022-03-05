@@ -21,6 +21,8 @@ class AddLocationViewController : UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var studentLocationRequest: StudentLocationRequest = StudentLocationRequest(firstName: "Dilip", lastName: "A", longitude: 0, latitude: 0, mapString: "", mediaURL: "", uniqueKey: "1dc539f8-64ee-43f7-b424-e5b4bd2d7c6d")
     
     func getCoordinates(completion: @escaping (Double?, Double?) -> Void) {
@@ -77,8 +79,11 @@ class AddLocationViewController : UIViewController {
     
     @IBAction func onFinishButtonTap(_ sender: Any) {
         
+        activityIndicator.startAnimating()
+        
         NetworkService.postStudentLocation(studentLocationRequest: self.studentLocationRequest) {
             (isSuccessful, message) in
+            self.activityIndicator.stopAnimating()
             if(!isSuccessful) {
                 let msg = message ?? "Sorry, Something went wrong!"
                 Alerts.setParentView(parentView: self)
@@ -118,8 +123,12 @@ class AddLocationViewController : UIViewController {
         studentLocationRequest.mapString = location
         studentLocationRequest.mediaURL = url
         
+        self.activityIndicator.startAnimating()
+        
         self.getCoordinates() {
             (longitude, latitude) in
+            
+            self.activityIndicator.stopAnimating()
             
             guard let longitude = longitude, let latitude = latitude else {
                 

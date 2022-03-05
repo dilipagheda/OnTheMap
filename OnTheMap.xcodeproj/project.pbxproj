@@ -26,6 +26,8 @@
 		DA5BF83927D2DB5B00812970 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83827D2DB5B00812970 /* AddLocationViewController.swift */; };
 		DA5BF83B27D352C200812970 /* StudentLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83A27D352C200812970 /* StudentLocationRequest.swift */; };
 		DA5BF83D27D3548B00812970 /* StudentLocationPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83C27D3548B00812970 /* StudentLocationPostResponse.swift */; };
+		DA5BF83F27D4037200812970 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF83E27D4037200812970 /* LogoutResponse.swift */; };
+		DA5BF84127D4041300812970 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF84027D4041300812970 /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		DA5BF83827D2DB5B00812970 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		DA5BF83A27D352C200812970 /* StudentLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationRequest.swift; sourceTree = "<group>"; };
 		DA5BF83C27D3548B00812970 /* StudentLocationPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationPostResponse.swift; sourceTree = "<group>"; };
+		DA5BF83E27D4037200812970 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		DA5BF84027D4041300812970 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				DA2FAADB27CAE8CD00C6F51E /* LoginResponse.swift */,
 				DA5BF83427CB711000812970 /* StudentLocationResponse.swift */,
 				DA5BF83C27D3548B00812970 /* StudentLocationPostResponse.swift */,
+				DA5BF83E27D4037200812970 /* LogoutResponse.swift */,
+				DA5BF84027D4041300812970 /* Session.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -241,7 +247,9 @@
 				DA2FAABD27C994CE00C6F51E /* AppDelegate.swift in Sources */,
 				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,
+				DA5BF84127D4041300812970 /* Session.swift in Sources */,
 				DA5BF83927D2DB5B00812970 /* AddLocationViewController.swift in Sources */,
+				DA5BF83F27D4037200812970 /* LogoutResponse.swift in Sources */,
 				DA2FAAD727CAD16400C6F51E /* NetworkService.swift in Sources */,
 				DA5BF83527CB711000812970 /* StudentLocationResponse.swift in Sources */,
 				DA5BF83727CED6BE00812970 /* Alerts.swift in Sources */,

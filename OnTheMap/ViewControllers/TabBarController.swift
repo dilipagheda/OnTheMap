@@ -14,6 +14,27 @@ class TabBarController: UITabBarController {
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
+    @IBAction func onLogoutTap(_ sender: Any) {
+        
+        NetworkService.logout() {
+            (isSuccessful, errorMessage) in
+            if(!isSuccessful) {
+                guard let errorMessage = errorMessage else {
+                    Alerts.setParentView(parentView: self)
+                        .showError(errorMessage: "Sorry! Something went wrong!")
+                    return
+                }
+
+                Alerts.setParentView(parentView: self)
+                    .showError(errorMessage: errorMessage)
+            }
+            
+            self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+            
+            
+        }
+    }
+    
     @IBAction func onRefreshTap(_ sender: Any) {
         
         func invokeRefreshOnMapViewController() {

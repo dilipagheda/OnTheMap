@@ -91,6 +91,60 @@ class NetworkService {
         
     }
     
+    class func logout(completion: @escaping (Bool, String?) -> Void) {
+        
+        var request = URLRequest(url: Endpoints.delete.url)
+        request.httpMethod = "DELETE"
+        
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        
+        for cookie in sharedCookieStorage.cookies! {
+          if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        
+        if let xsrfCookie = xsrfCookie {
+          request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+
+        
+        let dataTask = URLSession.shared.dataTask(with: request) {
+            data, urlResponse, error  in
+            guard let data = data else {
+                guard let error = error else {
+                    DispatchQueue.main.async {
+                        completion(false, "Sorry! Something went wrong!")
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    completion(false, error.localizedDescription)
+                }
+                return
+            }
+            
+            let range = 5..<data.count
+            let newData = data.subdata(in: range)
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let _ = try decoder.decode(LogoutResponse.self, from: newData)
+                DispatchQueue.main.async {
+                    completion(true, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(true, "Sorry! Something went wrong!")
+                }
+
+            }
+            
+        }
+        
+        dataTask.resume()
+    }
+    
     class func login(userName:String, password:String, completion: @escaping (Bool, String?) -> Void) {
         
         let udacity = Udacity(username: userName, password: password)
