@@ -23,10 +23,13 @@ class LoginViewController: UIViewController {
         
         super.viewDidLoad()
         
+        
         self.loginButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.updateLoginButtonUI(isEnabled: true)
         
         self.signUpButton.setTitleColor(Colors.blue, for: UIControl.State.normal)
+      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +37,11 @@ class LoginViewController: UIViewController {
         userNameTextField.text = ""
         passwordTextField.text = ""
         userNameTextField.becomeFirstResponder()
+        
+        //TEST CODE
+        userNameTextField.text = "dilip_agheda@yahoo.com"
+        passwordTextField.text = "heenadil2007*"
+
     }
     
     private func updateLoginButtonUI(isEnabled: Bool) {
@@ -82,7 +90,8 @@ class LoginViewController: UIViewController {
                     activityView.startAnimating()
                 }else{
                     self.updateLoginButtonUI(isEnabled: true)
-                    activityView.stopAnimating()                }
+                    activityView.stopAnimating()
+                }
             }
             
             updateUI(isLoginInProgress: true)

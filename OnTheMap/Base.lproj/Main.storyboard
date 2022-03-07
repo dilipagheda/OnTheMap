@@ -266,7 +266,7 @@
                                 </constraints>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-hs-IGy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu2-yB-OlW" userLabel="finishButton">
                                 <rect key="frame" x="20" y="772" width="374" height="60"/>
@@ -294,7 +294,7 @@
                         <viewLayoutGuide key="safeArea" id="zUu-4A-jmE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9dh-hs-IGy" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" id="1LJ-vV-b5h"/>
+                            <constraint firstItem="9dh-hs-IGy" firstAttribute="bottom" secondItem="zUu-4A-jmE" secondAttribute="bottom" id="4NQ-yg-giY"/>
                             <constraint firstItem="oEr-Jn-8BQ" firstAttribute="centerX" secondItem="0hg-LR-vBa" secondAttribute="centerX" id="59X-kV-jqP"/>
                             <constraint firstItem="IzB-2P-Cgx" firstAttribute="top" secondItem="zUu-4A-jmE" secondAttribute="top" id="5ID-eG-Ya8"/>
                             <constraint firstItem="m01-VO-Pwa" firstAttribute="centerY" secondItem="0hg-LR-vBa" secondAttribute="centerY" id="6lG-ut-Uur"/>
@@ -304,11 +304,11 @@
                             <constraint firstItem="m01-VO-Pwa" firstAttribute="centerX" secondItem="0hg-LR-vBa" secondAttribute="centerX" id="NhE-Sd-g62"/>
                             <constraint firstItem="B9d-Ke-GeZ" firstAttribute="top" secondItem="oEr-Jn-8BQ" secondAttribute="bottom" constant="20" id="QSE-k2-IRS"/>
                             <constraint firstItem="B9d-Ke-GeZ" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" constant="20" id="Tql-LN-7f4"/>
-                            <constraint firstItem="9dh-hs-IGy" firstAttribute="top" secondItem="zUu-4A-jmE" secondAttribute="top" id="Ygq-n5-wN5"/>
+                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="9dh-hs-IGy" secondAttribute="trailing" id="XpN-OJ-Wbz"/>
+                            <constraint firstItem="9dh-hs-IGy" firstAttribute="top" secondItem="IzB-2P-Cgx" secondAttribute="bottom" id="Yfp-ug-buJ"/>
                             <constraint firstItem="oEr-Jn-8BQ" firstAttribute="top" secondItem="IzB-2P-Cgx" secondAttribute="bottom" constant="10" id="ZrY-Yo-Pj4"/>
-                            <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="9dh-hs-IGy" secondAttribute="trailing" id="fPC-Yk-nGM"/>
-                            <constraint firstItem="zUu-4A-jmE" firstAttribute="bottom" secondItem="9dh-hs-IGy" secondAttribute="bottom" id="j2h-Dz-cpj"/>
                             <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="B9d-Ke-GeZ" secondAttribute="trailing" constant="20" id="kjH-cs-YUS"/>
+                            <constraint firstItem="9dh-hs-IGy" firstAttribute="leading" secondItem="zUu-4A-jmE" secondAttribute="leading" id="mTO-Me-HBu"/>
                             <constraint firstItem="zUu-4A-jmE" firstAttribute="trailing" secondItem="IzB-2P-Cgx" secondAttribute="trailing" id="oza-xi-gEI"/>
                             <constraint firstItem="zUu-4A-jmE" firstAttribute="bottom" secondItem="iu2-yB-OlW" secondAttribute="bottom" constant="30" id="s71-V2-wSm"/>
                         </constraints>

@@ -10,8 +10,6 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
-    private var results: [StudentInformation] = []
-
     @IBOutlet var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -24,18 +22,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     public func refresh() {
-        
-        print("refresh called")
+       
+        ViewModel.results = []
         
         NetworkService.getStudentLocations(){
             (results, error) in
             guard let results = results else {
-                self.results = []
-                //TODO: show error in the alert
+                ViewModel.results = []
+                Alerts.setParentView(parentView: self)
+                    .showError(errorMessage: "Error while fetching student locations!")
                 return
             }
             
-            self.results = results
+            ViewModel.results = results
             self.configureMapView()
         }
     }
@@ -43,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     private func configureMapView() {
         // The "locations" array is an array of dictionary objects that are similar to the JSON
         // data that you can download from parse.
-        let locations = self.results
+        let locations = ViewModel.results
         
         // We will create an MKPointAnnotation for each dictionary in "locations". The
         // point annotations will be stored in this array, and then provided to the map view.

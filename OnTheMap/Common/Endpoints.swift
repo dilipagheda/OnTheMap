@@ -23,7 +23,7 @@ enum Endpoints {
             return URL(string: "https://onthemap-api.udacity.com/v1/session")!
         case let .studentLocation(isGetRequest):
             if(isGetRequest) {
-                return URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt")!
+                return URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation?limit=100&order=-updatedAt")!
             }
             return URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!
         }

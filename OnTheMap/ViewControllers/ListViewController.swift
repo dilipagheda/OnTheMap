@@ -10,9 +10,6 @@ import UIKit
 
 class ListViewController: UITableViewController {
     
-    private var results: [StudentInformation] = []
-    
-    
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -22,20 +19,19 @@ class ListViewController: UITableViewController {
     
     public func refresh() {
         
-        print("refresh on list view")
-        
-        self.results = []
+        ViewModel.results = []
         self.tableView.reloadData()
         
         NetworkService.getStudentLocations(){
             (results, error) in
             guard let results = results else {
-                self.results = []
-                //TODO: show error in the alert
+                ViewModel.results = []
+                Alerts.setParentView(parentView: self)
+                    .showError(errorMessage: "Error while fetching student locations!")
                 return
             }
             
-            self.results = results
+            ViewModel.results = results
             self.tableView.reloadData()
             
         }
@@ -43,7 +39,7 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return results.count
+        return ViewModel.results.count
     }
     
     
@@ -51,7 +47,7 @@ class ListViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "onTheMapTableCell", for: indexPath)
             
-        let result = results[indexPath.row]
+        let result = ViewModel.results[indexPath.row]
         
         cell.textLabel!.text = "\(result.firstName) \(result.lastName)"
         cell.detailTextLabel!.text = result.mediaURL
@@ -61,7 +57,7 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let result = self.results[indexPath.row]
+        let result = ViewModel.results[indexPath.row]
         
         let url = URL(string: result.mediaURL)
         
