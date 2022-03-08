@@ -23,13 +23,10 @@ class LoginViewController: UIViewController {
         
         super.viewDidLoad()
         
-        
         self.loginButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.updateLoginButtonUI(isEnabled: true)
         
         self.signUpButton.setTitleColor(Colors.blue, for: UIControl.State.normal)
-      
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,11 +34,6 @@ class LoginViewController: UIViewController {
         userNameTextField.text = ""
         passwordTextField.text = ""
         userNameTextField.becomeFirstResponder()
-        
-        //TEST CODE
-        userNameTextField.text = "dilip_agheda@yahoo.com"
-        passwordTextField.text = "heenadil2007*"
-
     }
     
     private func updateLoginButtonUI(isEnabled: Bool) {
@@ -100,20 +92,21 @@ class LoginViewController: UIViewController {
                 isSuccessful, errorMessage in
                 if(isSuccessful){
                     
-                    updateUI(isLoginInProgress: false)
-                    
-                    self.performSegue(withIdentifier: "showLandingView", sender: nil)
+                    NetworkService.getUserData() {
+                        (isSuccessful) in
+                        if(isSuccessful) {
+                            updateUI(isLoginInProgress: false)
+                            
+                            self.performSegue(withIdentifier: "showLandingView", sender: nil)
+                        }else{
+                            Alerts.setParentView(parentView: self)
+                                .showError(errorMessage: "Error while fetching user data")
+                        }
+                    }
 
                 }else{
-                    let alert = UIAlertController(title: "Login Error", message: errorMessage ?? "Something went wrong!", preferredStyle: UIAlertController.Style.alert)
-                    
-                    let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                        _ in
-                        updateUI(isLoginInProgress: false)
-                    }
-                    alert.addAction(alertAction)
-                    
-                    self.present(alert, animated: true, completion: nil)
+                    Alerts.setParentView(parentView: self)
+                        .showError(errorMessage: errorMessage ?? "Sorry! Something went wrong!")
                 }
             }
         }

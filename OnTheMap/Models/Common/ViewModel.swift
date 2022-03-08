@@ -10,4 +10,6 @@ import Foundation
 class ViewModel
 {
     static var results: [StudentInformation] = []
+    static var firstName: String = ""
+    static var lastName: String = ""
 }

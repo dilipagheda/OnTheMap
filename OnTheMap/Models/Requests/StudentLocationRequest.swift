@@ -8,8 +8,8 @@
 import Foundation
 
 struct StudentLocationRequest: Codable {
-    let firstName: String
-    let lastName: String
+    var firstName: String
+    var lastName: String
     var longitude: Double
     var latitude: Double
     var mapString: String

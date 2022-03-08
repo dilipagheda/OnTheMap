@@ -30,6 +30,7 @@
 		DA5BF84127D4041300812970 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF84027D4041300812970 /* Session.swift */; };
 		DA5BF84327D5A64000812970 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF84227D5A64000812970 /* StudentInformation.swift */; };
 		DA5BF84527D5A6EA00812970 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF84427D5A6EA00812970 /* ViewModel.swift */; };
+		DA5BF84727D7369000812970 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BF84627D7369000812970 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		DA5BF84027D4041300812970 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		DA5BF84227D5A64000812970 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		DA5BF84427D5A6EA00812970 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DA5BF84627D7369000812970 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				DA5BF83427CB711000812970 /* StudentLocationResponse.swift */,
 				DA5BF83C27D3548B00812970 /* StudentLocationPostResponse.swift */,
 				DA5BF83E27D4037200812970 /* LogoutResponse.swift */,
+				DA5BF84627D7369000812970 /* UserData.swift */,
 				DA5BF84027D4041300812970 /* Session.swift */,
 			);
 			path = Responses;
@@ -254,6 +257,7 @@
 				DA2FAADC27CAE8CD00C6F51E /* LoginResponse.swift in Sources */,
 				DA2FAAE227CB411500C6F51E /* MapViewController.swift in Sources */,
 				DA5BF84127D4041300812970 /* Session.swift in Sources */,
+				DA5BF84727D7369000812970 /* UserData.swift in Sources */,
 				DA5BF83927D2DB5B00812970 /* AddLocationViewController.swift in Sources */,
 				DA5BF84527D5A6EA00812970 /* ViewModel.swift in Sources */,
 				DA5BF83F27D4037200812970 /* LogoutResponse.swift in Sources */,

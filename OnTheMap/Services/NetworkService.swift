@@ -70,11 +70,14 @@ class NetworkService {
 
                 return
             }
+            
+            let range = 5..<data.count
+            let newData = url.absoluteString == Endpoints.userdata.url.absoluteString ? data.subdata(in: range) : data
            
             let decoder = JSONDecoder()
             
             do {
-                let responseObject = try decoder.decode(Response.self, from: data)
+                let responseObject = try decoder.decode(Response.self, from: newData)
 
                 DispatchQueue.main.async {
                     completion(responseObject, nil)
@@ -183,7 +186,10 @@ class NetworkService {
             
             (studentLocationResponse, error) in
             guard let studentLocationResponse = studentLocationResponse else {
-                completion(nil, error?.localizedDescription)
+                
+                DispatchQueue.main.async {
+                    completion(nil, error?.localizedDescription)
+                }
                 return
             }
             
@@ -194,6 +200,30 @@ class NetworkService {
         }
         
     }
+
+    class func getUserData(completion: @escaping (Bool) -> Void) {
+        
+        self.getRequest(url: Endpoints.userdata.url, responseType: UserDataResponse.self) {
+            
+            (userDataResponse, error) in
+            guard let userDataResponse = userDataResponse else {
+                
+                DispatchQueue.main.async {
+                    completion(false)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                ViewModel.firstName = userDataResponse.firstName
+                ViewModel.lastName = userDataResponse.lastName
+                completion(true)
+            }
+
+        }
+        
+    }
+
     
     class func postStudentLocation(studentLocationRequest: StudentLocationRequest, completion: @escaping (Bool, String?) -> Void) {
         
