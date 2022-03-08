@@ -79,11 +79,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.setRegion(mapView.regionThatFits(region), animated: true)
     }
 
-    // MARK: - MKMapViewDelegate
-
-    // Here we create a view with a "right callout accessory view". You might choose to look into other
-    // decoration alternatives. Notice the similarity between this method and the cellForRowAtIndexPath
-    // method in TableViewDataSource.
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseId = "pin"
@@ -123,7 +118,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 return
             }
             
-            app.open(url)
+            app.open(url) {
+                (isSuccessful) in
+                if(!isSuccessful) {
+                    Alerts.setParentView(parentView: self)
+                          .showError(errorMessage: "Invalid URL")
+                }
+            }
         }
     }
 }
